@@ -3,11 +3,17 @@ html
   head
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
     title FooProject
-    link(href='s40-theme/css/s40-theme.css', rel='stylesheet', type='text/css')
-    script(language='javascript', type='text/javascript', src='s40-theme/js/screensize.js')
+    link(href='s40-theme/css/s40-theme.css', rel='stylesheet', 
+      type='text/css')
+    link(rel="stylesheet", href="s40-theme/css/single_portrait.css",
+      type="text/css" />
+    script(language='javascript', type='text/javascript', 
+      src='s40-theme/js/screensize.js')
     script(type='text/javascript')
       function refreshPageContent() {
       // Add code for refreshing the page here...
+        console.log("Hey from refresh!");
+
       }
 
     // added for brunch
@@ -19,9 +25,9 @@ html
       // header
       .ui-header
         .ui-title.inline
-          h2 Enter project title here
+          h2 Title
         .refresh-icon.inline
           a(onclick='refreshPageContent();')
             img(alt='icon', src='s40-theme/images/refresh_40x40.png')
       .ui-content
-        | Test content
+        | Some test content
