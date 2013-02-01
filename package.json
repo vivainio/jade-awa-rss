@@ -18,6 +18,8 @@
   "dependencies": {
 	"javascript-brunch": ">= 1.0 < 1.5",
 
+  "jade-brunch": "git+ssh://git@github.com:brunch/jade-brunch.git",
+  "static-jade-brunch": "git+ssh://git@github.com:ilkosta/static-jade-brunch.git",
 	"css-brunch": ">= 1.0 < 1.5",
 
 	"uglify-js-brunch": ">= 1.0 < 1.5",
