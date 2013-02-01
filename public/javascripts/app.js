@@ -75,17 +75,16 @@
 })();
 
 window.require.define({"testCs": function(exports, require, module) {
-  var testCs;
-
-  testCs = function() {
+  
+  exports.callCs = function() {
     return console.log("Hello from coffeescript");
   };
   
 }});
 
 window.require.define({"testJs": function(exports, require, module) {
-  function testJs() {
-  	console.log("Hello from javascript!")
+  exports.callJs = function () {
+  	console.log("Hello from javascript!");
   }
 }});
 

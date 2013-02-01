@@ -6,13 +6,20 @@ html
     link(href='s40-theme/css/s40-theme.css', rel='stylesheet', 
       type='text/css')
     link(rel="stylesheet", href="s40-theme/css/single_portrait.css",
-      type="text/css" />
+      type="text/css")
     script(language='javascript', type='text/javascript', 
       src='s40-theme/js/screensize.js')
     script(type='text/javascript')
       function refreshPageContent() {
-      // Add code for refreshing the page here...
+        // Add code for refreshing the page here...
         console.log("Hey from refresh!");
+        //console.log(navigator.userAgent);
+        //console.log(window.innerWidth);
+        var testCs = require("testCs")
+        var testJs = require("testJs")
+        console.log(testJs)
+        testCs.callCs();
+        testJs.callJs();
 
       }
 
@@ -30,4 +37,6 @@ html
           a(onclick='refreshPageContent();')
             img(alt='icon', src='s40-theme/images/refresh_40x40.png')
       .ui-content
-        | Some test content
+        p Some test content
+        .ui-button(onclick="refreshPageContent();") Press this
+

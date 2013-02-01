@@ -1,3 +1,3 @@
-function testJs() {
-	console.log("Hello from javascript!")
+exports.callJs = function () {
+	console.log("Hello from javascript!");
 }

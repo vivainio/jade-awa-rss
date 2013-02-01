@@ -4,11 +4,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>FooProject</title>
     <link href="s40-theme/css/s40-theme.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="s40-theme/css/single_portrait.css" type="text/css">
     <script language="javascript" type="text/javascript" src="s40-theme/js/screensize.js"></script>
     <script type="text/javascript">
       function refreshPageContent() {
-      // Add code for refreshing the page here...
+        // Add code for refreshing the page here...
         console.log("Hey from refresh!");
+        //console.log(navigator.userAgent);
+        //console.log(window.innerWidth);
+        var testCs = require("testCs")
+        var testJs = require("testJs")
+        console.log(testJs)
+        testCs.callCs();
+        testJs.callJs();
         
       }
       
@@ -27,7 +35,10 @@
         </div>
         <div class="refresh-icon inline"><a onclick="refreshPageContent();"><img alt="icon" src="s40-theme/images/refresh_40x40.png"></a></div>
       </div>
-      <div class="ui-content">Some test content</div>
+      <div class="ui-content">
+        <p>Some test content</p>
+        <div onclick="refreshPageContent();" class="ui-button">Press this</div>
+      </div>
     </div>
   </body>
 </html>
