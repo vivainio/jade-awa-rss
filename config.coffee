@@ -21,3 +21,7 @@ exports.config =
     templates:
       joinTo:
         'javascripts/templates.js': /.+\.jade$/
+
+  plugins:
+    jade:
+      pretty: yes # Adds pretty-indentation whitespaces to output (false by default)
