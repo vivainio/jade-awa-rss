@@ -1,12 +1,91 @@
-window.require.define({"index": function(exports, require, module) {
-  module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
-  attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
-  var buf = [];
-  with (locals || {}) {
-  var interp;
-  buf.push('<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>FooProject</title><link href="s40-theme/css/s40-theme.css" rel="stylesheet" type="text/css"><script language="javascript" type="text/javascript" src="s40-theme/js/screensize.js"></script><script type="text/javascript">function refreshPageContent() {\n// Add code for refreshing te page here...\n}</script></head><body><div class="ui-page"><!-- header--><div class="ui-header"><div class="ui-title inline"><h2>FooProject</h2></div><div class="refresh-icon inline"><a onclick="refreshPageContent();"><img alt="icon" src="s40-theme/images/refresh_40x40.png"></a></div></div><div class="ui-content">Test content</div></div></body></html>');
-  }
-  return buf.join("");
+(function(/*! Brunch !*/) {
+  'use strict';
+
+  var globals = typeof window !== 'undefined' ? window : global;
+  if (typeof globals.require === 'function') return;
+
+  var modules = {};
+  var cache = {};
+
+  var has = function(object, name) {
+    return ({}).hasOwnProperty.call(object, name);
   };
+
+  var expand = function(root, name) {
+    var results = [], parts, part;
+    if (/^\.\.?(\/|$)/.test(name)) {
+      parts = [root, name].join('/').split('/');
+    } else {
+      parts = name.split('/');
+    }
+    for (var i = 0, length = parts.length; i < length; i++) {
+      part = parts[i];
+      if (part === '..') {
+        results.pop();
+      } else if (part !== '.' && part !== '') {
+        results.push(part);
+      }
+    }
+    return results.join('/');
+  };
+
+  var dirname = function(path) {
+    return path.split('/').slice(0, -1).join('/');
+  };
+
+  var localRequire = function(path) {
+    return function(name) {
+      var dir = dirname(path);
+      var absolute = expand(dir, name);
+      return globals.require(absolute);
+    };
+  };
+
+  var initModule = function(name, definition) {
+    var module = {id: name, exports: {}};
+    definition(module.exports, localRequire(name), module);
+    var exports = cache[name] = module.exports;
+    return exports;
+  };
+
+  var require = function(name) {
+    var path = expand(name, '.');
+
+    if (has(cache, path)) return cache[path];
+    if (has(modules, path)) return initModule(path, modules[path]);
+
+    var dirIndex = expand(path, './index');
+    if (has(cache, dirIndex)) return cache[dirIndex];
+    if (has(modules, dirIndex)) return initModule(dirIndex, modules[dirIndex]);
+
+    throw new Error('Cannot find module "' + name + '"');
+  };
+
+  var define = function(bundle) {
+    for (var key in bundle) {
+      if (has(bundle, key)) {
+        modules[key] = bundle[key];
+      }
+    }
+  }
+
+  globals.require = require;
+  globals.require.define = define;
+  globals.require.brunch = true;
+})();
+
+window.require.define({"testCs": function(exports, require, module) {
+  var testCs;
+
+  testCs = function() {
+    return console.log("Hello from coffeescript");
+  };
+  
+}});
+
+window.require.define({"testJs": function(exports, require, module) {
+  function testJs() {
+  	console.log("Hello from javascript!")
+  }
 }});
 
