@@ -19,4 +19,5 @@ exports.config =
         after: []
 
     templates:
-      joinTo: 'javascripts/app.js'
+      joinTo:
+        'javascripts/templates.js': /.+\.jade$/
