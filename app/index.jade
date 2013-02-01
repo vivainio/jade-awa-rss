@@ -16,10 +16,14 @@ html
         //console.log(navigator.userAgent);
         //console.log(window.innerWidth);
         var testCs = require("testCs")
-        var testJs = require("testJs")
-        console.log(testJs)
+        var testJs = require("testJs")        
         testCs.callCs();
         testJs.callJs();
+        ml = require("templates/mainlist")
+        console.log(ml)
+        var ns = {listitems: ["one", "two"] }
+        var rend = ml(ns, jade.attrs, jade.escape, jade.rethrow, jade.merge)
+        console.log(rend)
 
       }
 

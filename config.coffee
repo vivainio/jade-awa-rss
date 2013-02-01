@@ -25,3 +25,5 @@ exports.config =
   plugins:
     jade:
       pretty: yes # Adds pretty-indentation whitespaces to output (false by default)
+    static_jade:
+      path: [/app$/]
