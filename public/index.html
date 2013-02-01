@@ -22,6 +22,8 @@
         var ns = {listitems: ["one", "two"] }
         var rend = ml(ns, jade.attrs, jade.escape, jade.rethrow, jade.merge)
         console.log(rend)
+        n = document.getElementById("listdiv")
+        n.innerHTML=rend
         
       }
       
@@ -43,6 +45,7 @@
       <div class="ui-content">
         <p>Some test content</p>
         <div onclick="refreshPageContent();" class="ui-button">Press this</div>
+        <div id="listdiv"></div>
       </div>
     </div>
   </body>
