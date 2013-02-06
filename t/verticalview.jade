@@ -9,6 +9,17 @@ html
     .pubDate_contnr
       #catPubDate.pubDate_txt Wed, 06 Feb 2013 05:50:22 EST
     .content
+      for ent, index in entries
+
+        .entry(id="entry" + index, 
+          onclick='mwl.setGroupTarget("#btns","#btn0", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_0", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry0", "height_cur2");mwl.addClass("#entries", "entry0");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')        
+          div(style='display: block;')
+            .headlinePic.inline
+              img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_sl_obama_0205.jpg')
+            .headline.inline= ent.headline
+            .pubDate= ent.pubDate
+        .greySep
+
       #entryn0.entry(onclick='mwl.setGroupTarget("#btns","#btn0", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_0", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry0", "height_cur2");mwl.addClass("#entries", "entry0");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
         div(style='display: block;')
           .headlinePic.inline
