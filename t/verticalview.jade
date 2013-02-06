@@ -1,92 +1,21 @@
-html
-  body
-    .header_contnr
-      .inline.ui-title
-        img(src='s40-theme/images/title_news.png', width='113', height='40', alt='News')
-      .inline.refresh-icon
-        a(onclick='refreshPageContent();')
-          img(alt='icon', src='s40-theme/images/reload.png')
-    .pubDate_contnr
-      #catPubDate.pubDate_txt Wed, 06 Feb 2013 05:50:22 EST
-    .content
-      for ent, index in entries
+.header_contnr
+  .inline.ui-title
+    img(src='s40-theme/images/title_news.png', width='113', height='40', alt='News')
+  .inline.refresh-icon
+    a(onclick='refreshPageContent();')
+      img(alt='icon', src='s40-theme/images/reload.png')
+.pubDate_contnr
+  #catPubDate.pubDate_txt Wed, 06 Feb 2013 05:50:22 EST
+.content
+  for ent, index in entries
 
-        .entry(id="entry" + index, 
-          onclick='mwl.setGroupTarget("#btns","#btn0", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_0", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry0", "height_cur2");mwl.addClass("#entries", "entry0");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')        
-          div(style='display: block;')
-            .headlinePic.inline
-              img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_sl_obama_0205.jpg')
-            .headline.inline= ent.headline
-            .pubDate= ent.pubDate
-        .greySep
+    .entry(id="entry" + index, 
+      onclick='mwl.setGroupTarget("#btns","#btn0", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_0", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry0", "height_cur2");mwl.addClass("#entries", "entry0");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')        
+      div(style='display: block;')
+        .headlinePic.inline
+          img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_sl_obama_0205.jpg')
+        .headline.inline= ent.headline
+        .pubDate= ent.pubDate
+    .greySep
 
-      #entryn0.entry(onclick='mwl.setGroupTarget("#btns","#btn0", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_0", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry0", "height_cur2");mwl.addClass("#entries", "entry0");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_sl_obama_0205.jpg')
-          .headline.inline A Guide to Sequestration, the Bad Budget Policy We...
-          .pubDate Wed, 06 Feb 2013 05:50:22 EST
-      .greySep
-      #entryn1.entry(onclick='mwl.setGroupTarget("#btns","#btn1", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_1", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry1", "height_cur2");mwl.addClass("#entries", "entry1");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='75', height='50', src='s40-theme/images/rss3.png')
-          .headline.inline Justice Sues S&P, But What Purpose are Ratings Age...
-          .pubDate Wed, 06 Feb 2013 05:50:22 EST
-      .greySep
-      #entryn2.entry(onclick='mwl.setGroupTarget("#btns","#btn2", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_2", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry2", "height_cur2");mwl.addClass("#entries", "entry2");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_int_siliviri_0205.jpg')
-          .headline.inline The Big Prison By the Sea: Will Its Captives Chang...
-          .pubDate Wed, 06 Feb 2013 05:50:22 EST
-      .greySep
-      #entryn3.entry(onclick='mwl.setGroupTarget("#btns","#btn3", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_3", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry3", "height_cur2");mwl.addClass("#entries", "entry3");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_int_malilede1_0205.jpg')
-          .headline.inline France's Mali Mission: Has al-Qaeda Been Defeated?...
-          .pubDate Wed, 06 Feb 2013 05:50:22 EST
-      .greySep
-      #entryn4.entry(onclick='mwl.setGroupTarget("#btns","#btn4", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_4", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry4", "height_cur2");mwl.addClass("#entries", "entry4");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='75', height='50', src='s40-theme/images/rss3.png')
-          .headline.inline Former England Soccer Star Paul Gascoigne in Rehab...
-          .pubDate Wed, 06 Feb 2013 05:50:22 EST
-      .greySep
-      #entryn5.entry(onclick='mwl.setGroupTarget("#btns","#btn5", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_5", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry5", "height_cur2");mwl.addClass("#entries", "entry5");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_int_nu_river_0205.jpg')
-          .headline.inline Chinese Environmentalists Lose Long Fight to Stop ...
-          .pubDate Wed, 06 Feb 2013 05:50:23 EST
-      .greySep
-      #entryn6.entry(onclick='mwl.setGroupTarget("#btns","#btn6", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_6", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry6", "height_cur2");mwl.addClass("#entries", "entry6");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_biz_chart_0205.jpg')
-          .headline.inline The Most Important Chart in American Politics
-          .pubDate Wed, 06 Feb 2013 05:50:23 EST
-      .greySep
-      #entryn7.entry(onclick='mwl.setGroupTarget("#btns","#btn7", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_7", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry7", "height_cur2");mwl.addClass("#entries", "entry7");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='75', height='50', src='s40-theme/images/rss3.png')
-          .headline.inline The Last Ride of the Devil of Ramadi: Sniper Chris...
-          .pubDate Wed, 06 Feb 2013 05:50:23 EST
-      .greySep
-      #entryn8.entry(onclick='mwl.setGroupTarget("#btns","#btn8", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_8", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry8", "height_cur2");mwl.addClass("#entries", "entry8");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_int_ninja_0204.jpg')
-          .headline.inline You Don't Know Ninjas: 8 Revelations
-          .pubDate Tue, 05 Feb 2013 09:20:00 EST
-      .greySep
-      #entryn9.entry(onclick='mwl.setGroupTarget("#btns","#btn9", "show", "hide");mwl.setGroupTarget("#td_back", "#back_id_9", "show", "hide");mwl.addClass("#verviewcontainer", "height_cur");mwl.scrollTo("#views");mwl.switchClass("#horview", "hide", "show");mwl.removeClass("#entry9", "height_cur2");mwl.addClass("#entries", "entry9");mwl.switchClass("#views", "view1", "view2");mwl.addClass("#entries", "hortransition");')
-        div(style='display: block;')
-          .headlinePic.inline
-            img(width='77', height='50', src='http://img.timeinc.net/time/daily/2013/1302/232_sci_asteroid_0204.jpg')
-          .headline.inline Duck! Close Shave with an Asteroid
-          .pubDate Tue, 05 Feb 2013 02:45:00 EST
-      .greySep
+

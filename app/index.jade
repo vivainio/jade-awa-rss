@@ -20,12 +20,18 @@ html
         testCs.callCs();
         testJs.callJs();
         ml = require("templates/mainlist")
-        console.log(ml)
+        //console.log(ml)
         var ns = {listitems: ["one", "two", "three"] }
         var rend = ml(ns, jade.attrs, jade.escape, jade.rethrow, jade.merge)
-        console.log(rend)
+        //console.log(rend)
         n = document.getElementById("listdiv")
         n.innerHTML=rend
+
+        App = require("rssapp").App
+        app = new App;
+        app.fetch("http://www.osnews.com/files/recent.xml");
+
+        //fetchRss();
 
       }
 

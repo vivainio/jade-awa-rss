@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
- <widget xmlns="http://www.w3.org/ns/widgets" height="200" id="http://FooProject" version="1.0.0" viewmodes="windowed fullscreen" width="200">
+ <widget xmlns="http://www.w3.org/ns/widgets" height="200" id="http://rss2" version="1.0.0" viewmodes="windowed fullscreen" width="200">
     
-    <name short="FooProject">FooProject</name>    
+    <name short="FooProject">rss2</name>    
 
     <description>
        An example Basic Series 40 web app runtime.

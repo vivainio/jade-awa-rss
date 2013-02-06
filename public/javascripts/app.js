@@ -74,6 +74,62 @@
   globals.require.brunch = true;
 })();
 
+window.require.define({"rssapp": function(exports, require, module) {
+  var App, jadeRender;
+
+  jadeRender = function(template, ns) {
+    var rend;
+    console.log("Render", ns);
+    rend = template(ns, jade.attrs, jade.escape, jade.rethrow, jade.merge);
+    return rend;
+  };
+
+  App = (function() {
+
+    function App() {
+      this.vertTmpl = require("templates/verticalview");
+    }
+
+    App.prototype.fetch = function(url) {
+      var _this = this;
+      return jQuery.getFeed({
+        url: url,
+        success: function(feed) {
+          var ents, it, _i, _len, _ref;
+          console.log("Success", feed);
+          ents = [];
+          _ref = feed.items;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            it = _ref[_i];
+            ents.push({
+              headline: it.description,
+              pubdate: it.updated
+            });
+          }
+          console.log("Entries", ents);
+          _this.items = ents;
+          return _this.publishItems();
+        }
+      });
+    };
+
+    App.prototype.publishItems = function() {
+      var html, ns;
+      ns = {
+        entries: this.items
+      };
+      html = jadeRender(this.vertTmpl, ns);
+      return console.log(html);
+    };
+
+    return App;
+
+  })();
+
+  exports.App = App;
+  
+}});
+
 window.require.define({"testCs": function(exports, require, module) {
   
   exports.callCs = function() {
